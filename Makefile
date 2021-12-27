@@ -8,7 +8,8 @@ release:
 	mv RocksPapersScissors bin/release/
 
 clean:
-	rm RocksPapersScissors
+	rm bin/release/RocksPapersScissors
+	rm bin/debug/RocksPapersScissors
 
 install:
-	mv RocksPapersScissors /usr/local/bin/
+	mv bin/release/RocksPapersScissors /usr/local/bin/
