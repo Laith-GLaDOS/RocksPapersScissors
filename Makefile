@@ -1,15 +1,17 @@
 debug:
-	gcc src/main.c -o RocksPapersScissors -lSDL2 -lSDL2_image
+	gcc src/pure/main.c -o RocksPapersScissors -lSDL2 -lSDL2_image
 	mv RocksPapersScissors bin/debug/
 	./bin/debug/RocksPapersScissors
 
+debug_windows:
+	gcc src/windows/main.c -o RocksPapersScissors.exe -lSDL2 -lSDL2_image
+	move RocksPapersScissors.exe bin/debug/
+	.\bin/debug/RocksPapersScissors.exe
+
 release:
-	gcc src/main.c -o RocksPapersScissors -lSDL2 -lSDL2_image -O3 -s
-	mv RocksPapersScissors bin/release/
+	gcc src/pure/main.c -o RocksPapersScissors -lSDL2 -lSDL2_image -O3 -s
+	mv RocksPapersScissors bin/release/linux/
 
-clean:
-	rm bin/release/RocksPapersScissors
-	rm bin/debug/RocksPapersScissors
-
-install:
-	mv bin/release/RocksPapersScissors /usr/local/bin/
+release_windows:
+	gcc src/windows/main.c -o RocksPapersScissors.exe -lSDL2 -lSDL2_image -O3 -s
+	move RocksPapersScissors.exe bin/release/windows/
