@@ -27,7 +27,7 @@ void playWinSound() {
 
 void playTieSound() {
     AudioDevice = SDL_OpenAudioDevice(NULL, 0, &tie_soundeffect_spec, NULL, 0);
-    SDL_QueueAudio(AudioDevice_3, tie_soundeffect_buffer, tie_soundeffect_length);
+    SDL_QueueAudio(AudioDevice, tie_soundeffect_buffer, tie_soundeffect_length);
     SDL_PauseAudioDevice(AudioDevice, 0);
 }
 
